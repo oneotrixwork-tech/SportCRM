@@ -12,8 +12,13 @@ kotlin {
 }
 dependencies {
 
-    implementation(libs.androidx.activity.compose)
+    implementation(project(":shared"))
 
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.foundation)
+    implementation(libs.compose.runtime)
     implementation(libs.compose.uiToolingPreview)
     debugImplementation(libs.compose.uiTooling)
 }
