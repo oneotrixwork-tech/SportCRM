@@ -6,6 +6,11 @@ plugins {
 
 group = "com.oneotrixwork.sportcrm"
 version = "1.0.0"
+
+kotlin {
+    jvmToolchain(17)
+}
+
 application {
     mainClass = "com.oneotrixwork.sportcrm.ApplicationKt"
 }

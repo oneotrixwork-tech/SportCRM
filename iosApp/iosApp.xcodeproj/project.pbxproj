@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		72AD38C63076B2A000942874 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD38C53076B2A000942874 /* AuthUseCase.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		72AD38C53076B2A000942874 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		FFD7F78FC5619B5EF7035B80 /* SportCRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportCRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,6 +63,7 @@
 		F868C99E0E78C629B847E0C0 = {
 			isa = PBXGroup;
 			children = (
+				72AD38C53076B2A000942874 /* AuthUseCase.swift */,
 				8C3D11CEB1A5564161448CAE /* Configuration */,
 				A251AB6AACFF9068AF8C2C00 /* iosApp */,
 				ED1776D8B4C46EF509B9865D /* Products */,
@@ -161,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72AD38C63076B2A000942874 /* AuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

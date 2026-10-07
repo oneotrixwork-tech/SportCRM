@@ -1,4 +1,4 @@
-package com.oneotrixwork.sportcrm
+package com.oneotrixwork.sportcrm.screens.login
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
@@ -13,11 +13,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun App(
-    loginText: String,
-    onLogin: () -> Unit
+    viewModel: LoginViewModel = koinViewModel(),
 ) {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
@@ -28,14 +28,14 @@ fun App(
             Button(
                 onClick = {
                     showContent = !showContent
-                    onLogin()
+                    viewModel.login()
                 }
             ) {
                 Text("Click Me")
             }
             AnimatedVisibility(showContent) {
                 Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(text = loginText)
+                    Text(text = "Hello World!")
                 }
             }
         }

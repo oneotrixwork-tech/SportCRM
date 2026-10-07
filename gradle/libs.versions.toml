@@ -21,6 +21,13 @@ postgresql = "42.7.13"
 
 jbcrypt = "0.4"
 
+# DI
+koin = "4.2.2"
+koin-compiler = "1.2.1"
+
+#Logger
+kermit = "2.2.0"
+
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -41,18 +48,22 @@ compose-components-resources = { module = "org.jetbrains.compose.components:comp
 compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 
-# Ktor-server
+# Ktor-server (backend)
 ktor-serverCore = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
 ktor-serverNetty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
 ktor-serverTestHost = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor" }
 ktor-serialization-kotlinx = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
 
-# Ktor-client
+# Ktor-client (shared)
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+
+#Logging
+logger-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 
 #server db
 jetbrains-exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "jetbrains-exposed"}
@@ -65,6 +76,14 @@ postgresql-driver = { module = "org.postgresql:postgresql", version.ref = "postg
 #hashing
 jbcrypt = { module = "org.mindrot:jbcrypt", version.ref = "jbcrypt"}
 
+# DI
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin"}
+koin-core = { module = "io.insert-koin:koin-core" }
+koin-android = { module = "io.insert-koin:koin-android" }
+koin-annotations = { module = "io.insert-koin:koin-annotations"}
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel" }
+
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
@@ -74,3 +93,6 @@ kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+
+# DI
+koin-compiler = { id = "io.insert-koin.compiler.plugin", version.ref = "koin-compiler"}

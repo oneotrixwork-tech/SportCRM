@@ -1,35 +1,26 @@
-import SwiftUI
-import Shared
+//
+//  LoginView.swift
+//  iosApp
+//
+//  Created by Shutov MS on 07.10.2026.
+//
 
-struct ContentView: View {
+import SwiftUI
+
+struct LoginView: View {
+    @StateObject private var viewModel = LoginViewModel()
     @State private var showContent = false
-    @State private var isLoading = false
     @State private var message = "Click me!"
-    
     var body: some View {
         VStack {
             Button(message) {
                 withAnimation {
                     showContent = !showContent
-                    isLoading = true
                 }
                 Task {
-                    do {
-                       
-                        
-                        await MainActor.run {
-                            isLoading = false
-                        
-                        }
-                    } catch {
-                        await MainActor.run {
-                            isLoading = false
-                            message = "Ошибка: \(error.localizedDescription)"
-                        }
-                    }
+                    viewModel.submit()
                 }
             }
-            .disabled(isLoading)
 
             if showContent {
                 VStack(spacing: 16) {
@@ -46,8 +37,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    LoginView()
 }
