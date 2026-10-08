@@ -18,6 +18,8 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+            export(project(":shared:core:model"))
+            export(project(":shared:feature:auth"))
         }
     }
     
@@ -39,23 +41,18 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
+
+            implementation(project(":shared:core:network"))
+            api(project(":shared:feature:auth"))
+            api(project(":shared:core:model"))
             // DI
             api(project.dependencies.platform(libs.koin.bom))
             api(libs.koin.core)
             api(libs.koin.annotations)
-            implementation(libs.ktor.client.core)
-            implementation(libs.ktor.client.logging)
-            implementation(libs.ktor.client.content.negotiation)
-            implementation(libs.ktor.serialization.kotlinx)
-            implementation(libs.logger.kermit)
         }
         androidMain.dependencies {
             // DI
             api(libs.koin.android)
-            implementation(libs.ktor.client.okhttp)
-        }
-        iosMain.dependencies {
-            implementation(libs.ktor.client.darwin)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

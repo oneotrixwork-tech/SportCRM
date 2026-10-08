@@ -2,7 +2,7 @@ package com.oneotrixwork.sportcrm.screens.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.oneotrixwork.sportcrm.domain.usecase.LoginUseCase
+import com.oneotrixwork.sportcrm.feature.auth.domain.usecases.LoginUseCase
 import kotlinx.coroutines.launch
 
 class LoginViewModel(

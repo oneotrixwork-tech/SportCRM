@@ -1,6 +1,6 @@
 package com.oneotrixwork.sportcrm.di
 
-import com.oneotrixwork.sportcrm.domain.usecase.LoginUseCase
+import com.oneotrixwork.sportcrm.feature.auth.domain.usecases.LoginUseCase
 import org.koin.mp.KoinPlatform
 
 object KoinInjector {
